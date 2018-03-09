@@ -4,7 +4,7 @@
 '''
 Author: sunlei
 Email: sunlei@cmcm.com
-Last modified: 2018-01-06 16:56:05
+Last modified: 2018-03-08 10:39:40
 '''
 
-from .retina_net import RetinaNet
+

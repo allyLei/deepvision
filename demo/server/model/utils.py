@@ -59,6 +59,24 @@ def to_cuda(x):
         raise TypeError
 
 
+def to_numpy(x):
+    if isinstance(x, torch.FloatTensor) or \
+          isinstance(x, torch.IntTensor) or \
+          isinstance(x, torch.DoubleTensor) or \
+          isinstance(x, torch.LongTensor):
+        return x.numpy().copy()
+    if isinstance(x, Variable):
+        if x.is_cuda:
+            return x.cpu().data.numpy()
+        return x.data.numpy()
+    elif isinstance(x, list) or isinstance(x, tuple):
+        y = []
+        for i, e in enumerate(x):
+            y.append(to_numpy(e))
+        return y
+    else:
+        raise TypeError
+
 
 # -------------------------
 # clothing specific utils

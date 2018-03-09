@@ -33,8 +33,7 @@ class FairNet(nn.Module):
         in_channels = self.backbone.get_channels()
         self.fpn = FeaturePyramid(in_channels, num_channel,
                                   fpn_layer, conv=conv, init='kaiming')
-        self.mask = MaskHead(num_classes, fpn_layer, num_channel,
-                             deform=conv == 'deform')
+        self.mask = MaskHead(num_classes, fpn_layer, num_channel)
 
     def forward(self, x, y=None, ws=None, hs=None):
         x = preprocessing(x, self.backbone_arch)

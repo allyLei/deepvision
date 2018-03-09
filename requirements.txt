@@ -4,3 +4,5 @@ visdom
 matplotlib
 Cython
 pyyaml
+Pillow
+numpy

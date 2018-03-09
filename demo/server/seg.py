@@ -17,7 +17,7 @@ import torch
 from torch.autograd import Variable
 
 from model.seg.fair_net import FairNet
-from model.utils import to_cuda, imresize, smooth
+from model.utils import to_cuda, to_numpy, imresize, smooth
 from model.visualizer import vis_util
 
 
@@ -49,7 +49,7 @@ class Segmentor(object):
     def gen_model(self):
         model = FairNet(self.num_classes, self.backbone, self.groups,
                         dilation=self.dilation, fpn_layer=self.fpn_layer,
-                        use_postprocessing=True)
+                        use_postprocessing=False)
         model = torch.nn.DataParallel(model).cuda()
         model.eval()
 
@@ -83,7 +83,7 @@ class Segmentor(object):
         try:
             np_image, image, w, h = self.preprocessing(image)
             image = to_cuda(image).unsqueeze(0)
-            mask = self.model(image, ws=[w], hs=[h])[0]
+            mask = to_numpy(self.model(image))[0]
             mask = self.postprocessing(mask)
 
             if display:

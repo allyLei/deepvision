@@ -17,7 +17,7 @@ import torch
 from torch.autograd import Variable
 
 
-from model.det import RetinaNet
+from model.det.retina_net import RetinaNet
 from model.utils import to_cuda, to_numpy
 from model.libs.det import gen_anchors_list
 from model.libs.det.anchor.bbox import resize_bboxes, clip_bboxes
@@ -31,7 +31,7 @@ class Detector(object):
 
     def __init__(self, config_file):
         self.logger = logging.getLogger('detector')
-        config = json.load(file(config_file))
+        config = json.load(open(config_file))
         self.model_name = config['name']
         self.label_mapping_file = config['label_mapping_file']
         self.human_readable_file = config['human_readable_file']
@@ -57,7 +57,7 @@ class Detector(object):
             self.reverse_label_mapping[int(value)] = int(key)
 
         self.human_readable_labels = {}
-        doc = json.load(file(self.human_readable_file))
+        doc = json.load(open(self.human_readable_file))
         for item in doc:
             self.human_readable_labels[int(item['id'])] = item['name']
         self.logger.info('init label mapping and anchors done')
@@ -68,10 +68,9 @@ class Detector(object):
         self.logger.info(f'generate {self.anchors.size()} anchors done~')
 
     def gen_model(self):
-        model = RetinaNet(self.num_classes, self.backbone,
+        model = RetinaNet(self.num_classes, backbone=self.backbone,
                 fpn_layer=self.fpn_layer, use_bn=self.use_bn,
-                use_residual=self.use_residual, use_postprocessing=True,
-                cls_thresh=self.cls_thresh)
+                use_residual=self.use_residual)
         model = torch.nn.DataParallel(model).cuda()
         model.eval()
 
@@ -97,12 +96,12 @@ class Detector(object):
         probs, labels = torch.max(probs, dim=-1)
         indexes = (probs > self.cls_thresh).data.nonzero().view(-1)
         if indexes.numel() == 0:
-            return
+            return None, None, None
         probs = probs[indexes].unsqueeze(-1)
         labels = (labels[indexes] + 1).unsqueeze(-1).float()
         bboxes = bboxes[indexes, :]
         dets = to_numpy(torch.cat([bboxes, probs, labels], dim=1))
-        select = np.argsort(rets[:, 4])[-500:]
+        select = np.argsort(dets[:, 4])[-500:]
         dets = dets[select, :]
         nms_indexes = nms(dets[:, :5], self.nms_thresh)[:100]
         dets = dets[nms_indexes, :]
@@ -120,6 +119,8 @@ class Detector(object):
             probs, bboxes = self.model(image, anchors=self.anchors)
             boxes, scores, classes = self.postprocessing(probs, bboxes,
                                                          ratio_x, ratio_y, w, h)
+            if boxes is None:
+                return []
 
             if display:
                 self.visualize(np_image, boxes, scores, classes, image_id)
@@ -127,8 +128,8 @@ class Detector(object):
             ret = [{
                     'category': self.human_readable_labels[int(classes[i])],
                     'score': round(float(scores[i]), 2),
-                    'bbox': [round(float(boxes[i][0])/size[0], 2), round(float(boxes[i][1])/size[1], 2),
-                             round(float(boxes[i][2])/size[0], 2), round(float(boxes[i][3])/size[1], 2)]
+                    'bbox': [round(float(boxes[i][0])/w, 2), round(float(boxes[i][1])/h, 2),
+                             round(float(boxes[i][2])/w, 2), round(float(boxes[i][3])/h, 2)]
                    } for i in range(boxes.shape[0])]
 
             return ret
@@ -145,7 +146,7 @@ class Detector(object):
             line_thickness=3)
         image = Image.fromarray(image)
 
-        if os.path.exists(self.visualize_path):
+        if not os.path.exists(self.visualize_path):
             os.makedirs(self.visualize_path)
         image_id = image_id if image_id else 'test'
         image.save(os.path.join(self.visualize_path, f'{image_id}.jpg'), 'JPEG')
