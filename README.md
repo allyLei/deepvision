@@ -2,12 +2,11 @@
 
 This git includes implementations of object detection, semantic segmentation and gan(pixel2pixel). We mainly do this for cloth segmentation.
 
-![test](https://github.com/allyLei/deepvision/blob/cloth/data/images/0240.jpg)
-<img src="http://git.liebaopay.com/sunlei/deepvision/uploads/b260845ad7564f69621ae7291b0800fd/0240.jpg" width="200" height="320" />
-<img src="http://git.liebaopay.com/sunlei/deepvision/uploads/3b453f8d1b82b9614332e1b9875ca144/0561.jpg" width="200" height="320" />
-<img src="http://git.liebaopay.com/sunlei/deepvision/uploads/244256abeaf26765558783532d9ea04a/0579.jpg" width="200" height="320" />
-<img src="http://git.liebaopay.com/sunlei/deepvision/uploads/bdf87075ee4a3a54bdcbf79d0e60a06f/0687.jpg" width="200" height="320" />
-<img src="http://git.liebaopay.com/sunlei/deepvision/uploads/4e75ca89f5686410c07c81c22ef36f9e/0803.jpg" width="200" height="320" />
+<img src="https://github.com/allyLei/deepvision/blob/cloth/data/images/0240.jpg" width="200" height="320" />
+<img src="https://github.com/allyLei/deepvision/blob/cloth/data/images/0561.jpg" width="200" height="320" />
+<img src="https://github.com/allyLei/deepvision/blob/cloth/data/images/0579.jpg" width="200" height="320" />
+<img src="https://github.com/allyLei/deepvision/blob/cloth/data/images/0687.jpg" width="200" height="320" />
+<img src="https://github.com/allyLei/deepvision/blob/cloth/data/images/0803.jpg" width="200" height="320" />
 
 ### Installation on Linux
 
@@ -53,7 +52,7 @@ or use multiple cards (when using multiple cards, ensure this batch_size should 
 
 While you are training, you can moniter the training process through your browser. Open `http://ip:8097`, you can see the loss decay curve along with the learning rate decay curve, during each `save_step`, we save the current model checkpoint file, and do evaluation, and visualization the current model segmentation result.
 
-<img src="http://git.liebaopay.com/sunlei/deepvision/uploads/120c64737fb317e3e68f7a8b095fdd6d/visdom.png" width="800" height="600" align=center />
+<img src="https://github.com/allyLei/deepvision/blob/cloth/data/images/visdom.png" width="800" height="600" align=center />
 
 ### Clothing dataset
 
