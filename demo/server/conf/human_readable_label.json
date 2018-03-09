@@ -1,0 +1,482 @@
+[
+    {
+        "supercategory": "person", 
+        "ch_name": "人", 
+        "id": 1, 
+        "name": "person"
+    }, 
+    {
+        "supercategory": "vehicle", 
+        "ch_name": "自行车", 
+        "id": 2, 
+        "name": "bicycle"
+    }, 
+    {
+        "supercategory": "vehicle", 
+        "ch_name": "汽车", 
+        "id": 3, 
+        "name": "car"
+    }, 
+    {
+        "supercategory": "vehicle", 
+        "ch_name": "摩托车", 
+        "id": 4, 
+        "name": "motorcycle"
+    }, 
+    {
+        "supercategory": "vehicle", 
+        "ch_name": "飞机", 
+        "id": 5, 
+        "name": "airplane"
+    }, 
+    {
+        "supercategory": "vehicle", 
+        "ch_name": "巴士", 
+        "id": 6, 
+        "name": "bus"
+    }, 
+    {
+        "supercategory": "vehicle", 
+        "ch_name": "火车", 
+        "id": 7, 
+        "name": "train"
+    }, 
+    {
+        "supercategory": "vehicle", 
+        "ch_name": "卡车", 
+        "id": 8, 
+        "name": "truck"
+    }, 
+    {
+        "supercategory": "vehicle", 
+        "ch_name": "船", 
+        "id": 9, 
+        "name": "boat"
+    }, 
+    {
+        "supercategory": "outdoor", 
+        "ch_name": "交通信号灯", 
+        "id": 10, 
+        "name": "traffic light"
+    }, 
+    {
+        "supercategory": "outdoor", 
+        "ch_name": "消防栓", 
+        "id": 11, 
+        "name": "fire hydrant"
+    }, 
+    {
+        "supercategory": "outdoor", 
+        "ch_name": "停止标志", 
+        "id": 13, 
+        "name": "stop sign"
+    }, 
+    {
+        "supercategory": "outdoor", 
+        "ch_name": "停车收费表", 
+        "id": 14, 
+        "name": "parking meter"
+    }, 
+    {
+        "supercategory": "outdoor", 
+        "ch_name": "长凳", 
+        "id": 15, 
+        "name": "bench"
+    }, 
+    {
+        "supercategory": "animal", 
+        "ch_name": "鸟", 
+        "id": 16, 
+        "name": "bird"
+    }, 
+    {
+        "supercategory": "animal", 
+        "ch_name": "猫", 
+        "id": 17, 
+        "name": "cat"
+    }, 
+    {
+        "supercategory": "animal", 
+        "ch_name": "狗", 
+        "id": 18, 
+        "name": "dog"
+    }, 
+    {
+        "supercategory": "animal", 
+        "ch_name": "马", 
+        "id": 19, 
+        "name": "horse"
+    }, 
+    {
+        "supercategory": "animal", 
+        "ch_name": "羊", 
+        "id": 20, 
+        "name": "sheep"
+    }, 
+    {
+        "supercategory": "animal", 
+        "ch_name": "牛", 
+        "id": 21, 
+        "name": "cow"
+    }, 
+    {
+        "supercategory": "animal", 
+        "ch_name": "大象", 
+        "id": 22, 
+        "name": "elephant"
+    }, 
+    {
+        "supercategory": "animal", 
+        "ch_name": "熊", 
+        "id": 23, 
+        "name": "bear"
+    }, 
+    {
+        "supercategory": "animal", 
+        "ch_name": "斑马", 
+        "id": 24, 
+        "name": "zebra"
+    }, 
+    {
+        "supercategory": "animal", 
+        "ch_name": "长颈鹿", 
+        "id": 25, 
+        "name": "giraffe"
+    }, 
+    {
+        "supercategory": "accessory", 
+        "ch_name": "背包", 
+        "id": 27, 
+        "name": "backpack"
+    }, 
+    {
+        "supercategory": "accessory", 
+        "ch_name": "伞", 
+        "id": 28, 
+        "name": "umbrella"
+    }, 
+    {
+        "supercategory": "accessory", 
+        "ch_name": "手提包", 
+        "id": 31, 
+        "name": "handbag"
+    }, 
+    {
+        "supercategory": "accessory", 
+        "ch_name": "领带", 
+        "id": 32, 
+        "name": "tie"
+    }, 
+    {
+        "supercategory": "accessory", 
+        "ch_name": "手提箱", 
+        "id": 33, 
+        "name": "suitcase"
+    }, 
+    {
+        "supercategory": "sports", 
+        "ch_name": "飞盘", 
+        "id": 34, 
+        "name": "frisbee"
+    }, 
+    {
+        "supercategory": "sports", 
+        "ch_name": "滑雪", 
+        "id": 35, 
+        "name": "skis"
+    }, 
+    {
+        "supercategory": "sports", 
+        "ch_name": "滑雪板", 
+        "id": 36, 
+        "name": "snowboard"
+    }, 
+    {
+        "supercategory": "sports", 
+        "ch_name": "球", 
+        "id": 37, 
+        "name": "sports ball"
+    }, 
+    {
+        "supercategory": "sports", 
+        "ch_name": "风筝", 
+        "id": 38, 
+        "name": "kite"
+    }, 
+    {
+        "supercategory": "sports", 
+        "ch_name": "棒球棒", 
+        "id": 39, 
+        "name": "baseball bat"
+    }, 
+    {
+        "supercategory": "sports", 
+        "ch_name": "棒球手套", 
+        "id": 40, 
+        "name": "baseball glove"
+    }, 
+    {
+        "supercategory": "sports", 
+        "ch_name": "滑板", 
+        "id": 41, 
+        "name": "skateboard"
+    }, 
+    {
+        "supercategory": "sports", 
+        "ch_name": "冲浪板", 
+        "id": 42, 
+        "name": "surfboard"
+    }, 
+    {
+        "supercategory": "sports", 
+        "ch_name": "网球拍", 
+        "id": 43, 
+        "name": "tennis racket"
+    }, 
+    {
+        "supercategory": "kitchen", 
+        "ch_name": "瓶子", 
+        "id": 44, 
+        "name": "bottle"
+    }, 
+    {
+        "supercategory": "kitchen", 
+        "ch_name": "酒杯", 
+        "id": 46, 
+        "name": "wine glass"
+    }, 
+    {
+        "supercategory": "kitchen", 
+        "ch_name": "杯子", 
+        "id": 47, 
+        "name": "cup"
+    }, 
+    {
+        "supercategory": "kitchen", 
+        "ch_name": "叉子", 
+        "id": 48, 
+        "name": "fork"
+    }, 
+    {
+        "supercategory": "kitchen", 
+        "ch_name": "刀", 
+        "id": 49, 
+        "name": "knife"
+    }, 
+    {
+        "supercategory": "kitchen", 
+        "ch_name": "勺子", 
+        "id": 50, 
+        "name": "spoon"
+    }, 
+    {
+        "supercategory": "kitchen", 
+        "ch_name": "碗", 
+        "id": 51, 
+        "name": "bowl"
+    }, 
+    {
+        "supercategory": "food", 
+        "ch_name": "香蕉", 
+        "id": 52, 
+        "name": "banana"
+    }, 
+    {
+        "supercategory": "food", 
+        "ch_name": "苹果", 
+        "id": 53, 
+        "name": "apple"
+    }, 
+    {
+        "supercategory": "food", 
+        "ch_name": "三明治", 
+        "id": 54, 
+        "name": "sandwich"
+    }, 
+    {
+        "supercategory": "food", 
+        "ch_name": "橘子", 
+        "id": 55, 
+        "name": "orange"
+    }, 
+    {
+        "supercategory": "food", 
+        "ch_name": "西蓝花", 
+        "id": 56, 
+        "name": "broccoli"
+    }, 
+    {
+        "supercategory": "food", 
+        "ch_name": "胡萝卜", 
+        "id": 57, 
+        "name": "carrot"
+    }, 
+    {
+        "supercategory": "food", 
+        "ch_name": "热狗", 
+        "id": 58, 
+        "name": "hot dog"
+    }, 
+    {
+        "supercategory": "food", 
+        "ch_name": "披萨", 
+        "id": 59, 
+        "name": "pizza"
+    }, 
+    {
+        "supercategory": "food", 
+        "ch_name": "甜甜圈", 
+        "id": 60, 
+        "name": "donut"
+    }, 
+    {
+        "supercategory": "food", 
+        "ch_name": "蛋糕", 
+        "id": 61, 
+        "name": "cake"
+    }, 
+    {
+        "supercategory": "furniture", 
+        "ch_name": "椅子", 
+        "id": 62, 
+        "name": "chair"
+    }, 
+    {
+        "supercategory": "furniture", 
+        "ch_name": "沙发", 
+        "id": 63, 
+        "name": "couch"
+    }, 
+    {
+        "supercategory": "furniture", 
+        "ch_name": "盆栽", 
+        "id": 64, 
+        "name": "potted plant"
+    }, 
+    {
+        "supercategory": "furniture", 
+        "ch_name": "床", 
+        "id": 65, 
+        "name": "bed"
+    }, 
+    {
+        "supercategory": "furniture", 
+        "ch_name": "餐桌", 
+        "id": 67, 
+        "name": "dining table"
+    }, 
+    {
+        "supercategory": "furniture", 
+        "ch_name": "卫生间", 
+        "id": 70, 
+        "name": "toilet"
+    }, 
+    {
+        "supercategory": "electronic", 
+        "ch_name": "电视", 
+        "id": 72, 
+        "name": "tv"
+    }, 
+    {
+        "supercategory": "electronic", 
+        "ch_name": "笔记本电脑", 
+        "id": 73, 
+        "name": "laptop"
+    }, 
+    {
+        "supercategory": "electronic", 
+        "ch_name": "鼠标", 
+        "id": 74, 
+        "name": "mouse"
+    }, 
+    {
+        "supercategory": "electronic", 
+        "ch_name": "游戏手柄", 
+        "id": 75, 
+        "name": "remote"
+    }, 
+    {
+        "supercategory": "electronic", 
+        "ch_name": "键盘", 
+        "id": 76, 
+        "name": "keyboard"
+    }, 
+    {
+        "supercategory": "electronic", 
+        "ch_name": "手机", 
+        "id": 77, 
+        "name": "cell phone"
+    }, 
+    {
+        "supercategory": "appliance", 
+        "ch_name": "微波炉", 
+        "id": 78, 
+        "name": "microwave"
+    }, 
+    {
+        "supercategory": "appliance", 
+        "ch_name": "烤箱", 
+        "id": 79, 
+        "name": "oven"
+    }, 
+    {
+        "supercategory": "appliance", 
+        "ch_name": "烤面包机", 
+        "id": 80, 
+        "name": "toaster"
+    }, 
+    {
+        "supercategory": "appliance", 
+        "ch_name": "水槽", 
+        "id": 81, 
+        "name": "sink"
+    }, 
+    {
+        "supercategory": "appliance", 
+        "ch_name": "冰箱", 
+        "id": 82, 
+        "name": "refrigerator"
+    }, 
+    {
+        "supercategory": "indoor", 
+        "ch_name": "书籍", 
+        "id": 84, 
+        "name": "book"
+    }, 
+    {
+        "supercategory": "indoor", 
+        "ch_name": "钟", 
+        "id": 85, 
+        "name": "clock"
+    }, 
+    {
+        "supercategory": "indoor", 
+        "ch_name": "花瓶", 
+        "id": 86, 
+        "name": "vase"
+    }, 
+    {
+        "supercategory": "indoor", 
+        "ch_name": "剪刀", 
+        "id": 87, 
+        "name": "scissors"
+    }, 
+    {
+        "supercategory": "indoor", 
+        "ch_name": "泰迪熊", 
+        "id": 88, 
+        "name": "teddy bear"
+    }, 
+    {
+        "supercategory": "indoor", 
+        "ch_name": "吹风机", 
+        "id": 89, 
+        "name": "hair drier"
+    }, 
+    {
+        "supercategory": "indoor", 
+        "ch_name": "牙刷", 
+        "id": 90, 
+        "name": "toothbrush"
+    }
+]

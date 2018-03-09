@@ -1,0 +1,13 @@
+{"ch_name": "背景", "id": "0", "name": "background"}
+{"ch_name": "皮肤", "id": "1", "name": "skin"}
+{"ch_name": "头发", "id": "2", "name": "hair"}
+{"ch_name": "外部上装", "id": "3", "name": "outer top"}
+{"ch_name": "内部上装", "id": "4", "name": "inner top"}
+{"ch_name": "半身裙", "id": "5", "name": "skirt"}
+{"ch_name": "连衣裙", "id": "6", "name": "dress"}
+{"ch_name": "外部下装", "id": "7", "name": "outer bottom"}
+{"ch_name": "内部下装", "id": "8", "name": "inner bottom"}
+{"ch_name": "鞋子", "id": "9", "name": "shoes"}
+{"ch_name": "包", "id": "10", "name": "bag"}
+{"ch_name": "配件", "id": "11", "name": "accessories"}
+{"ch_name": "其他", "id": "12", "name": "other"}

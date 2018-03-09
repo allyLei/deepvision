@@ -1,0 +1,6 @@
+torchvision
+easydict
+visdom
+matplotlib
+Cython
+pyyaml

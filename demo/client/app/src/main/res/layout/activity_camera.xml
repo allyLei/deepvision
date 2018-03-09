@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cmcm.activity.CameraActivity" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <com.cmcm.camera.CameraSurfaceView
+            android:id="@+id/camera_surfaceview"
+            android:layout_width="0dip"
+            android:layout_height="0dip" />
+
+        <com.cmcm.ui.FaceView
+            android:id="@+id/face_view"
+            android:rotation="0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.cmcm.ui.ObjectView
+            android:id="@+id/object_view"
+            android:rotation="0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+    <include layout="@layout/model_selection" /> <!-- 顶部控制栏 -->
+    <include layout="@layout/camera_bottom_panel"/> <!-- 底部控制栏 -->
+
+</RelativeLayout>

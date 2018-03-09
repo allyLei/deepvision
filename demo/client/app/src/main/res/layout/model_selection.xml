@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/top_panel"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:paddingTop="5dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:layout_alignParentTop="true" >
+
+    <ImageButton
+        android:id="@+id/btn_switch_camera"
+        android:rotation="0"
+        android:visibility="invisible"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/ic_switch_camera"
+        android:layout_marginTop="-10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" />
+
+    <com.nex3z.togglebuttongroup.SingleSelectToggleGroup
+        android:id="@+id/group_choices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/btn_switch_camera"
+        android:layout_marginLeft="10dp"
+        app:tbgCheckedButton="@+id/seg512">
+
+        <com.nex3z.togglebuttongroup.button.LabelToggle
+            android:id="@+id/det300"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:textSize="12sp"
+            android:textColor="#ffffff"
+            android:layout_marginRight="10dp"
+            android:text="det300" />
+
+        <com.nex3z.togglebuttongroup.button.LabelToggle
+            android:id="@+id/det600"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:textSize="12sp"
+            android:textColor="#ffffff"
+            android:layout_marginRight="10dp"
+            android:text="det600"/>
+
+        <com.nex3z.togglebuttongroup.button.LabelToggle
+            android:id="@+id/mask600"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:textSize="12sp"
+            android:textColor="#ffffff"
+            android:layout_marginRight="10dp"
+            android:text="mask600"/>
+
+        <com.nex3z.togglebuttongroup.button.LabelToggle
+            android:id="@+id/seg512"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:textSize="12sp"
+            android:textColor="#ffffff"
+            android:layout_marginRight="10dp"
+            android:text="seg512"/>
+
+    </com.nex3z.togglebuttongroup.SingleSelectToggleGroup>
+
+
+</RelativeLayout>
