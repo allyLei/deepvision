@@ -2,6 +2,7 @@
 
 This git includes implementations of object detection, semantic segmentation and gan(pixel2pixel). We mainly do this for cloth segmentation.
 
+![test](https://github.com/allyLei/deepvision/blob/cloth/data/images/0240.jpg)
 <img src="http://git.liebaopay.com/sunlei/deepvision/uploads/b260845ad7564f69621ae7291b0800fd/0240.jpg" width="200" height="320" />
 <img src="http://git.liebaopay.com/sunlei/deepvision/uploads/3b453f8d1b82b9614332e1b9875ca144/0561.jpg" width="200" height="320" />
 <img src="http://git.liebaopay.com/sunlei/deepvision/uploads/244256abeaf26765558783532d9ea04a/0579.jpg" width="200" height="320" />
