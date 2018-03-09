@@ -7,7 +7,6 @@ import re
 import torch.nn as nn
 import math
 
-from ..common import DeformableConv2d
 
 
 __all__ = ['ResNet', 'resnet18', 'resnet34', 'resnet50', 'resnet101',
@@ -74,10 +73,7 @@ class Bottleneck(nn.Module):
         self.conv1 = nn.Conv2d(inplanes, planes, kernel_size=1, bias=False)
         self.bn1 = nn.BatchNorm2d(planes, momentum=momentum)
 
-        if conv == 'deform':
-            self.conv2 = DeformableConv2d(planes, planes, 3, stride=stride, groups=groups,
-                                          dilation=1, use_relu=False)
-        elif conv == 'seperable':
+        if conv == 'seperable':
             padding = (kernel_size - 1) / 2
             self.seperable = nn.Conv2d(planes, planes, kernel_size=kernel_size, stride=stride,
                                    groups=groups, padding=padding, bias=False)

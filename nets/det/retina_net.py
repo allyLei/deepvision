@@ -34,8 +34,7 @@ class RetinaNet(nn.Module):
         in_channels = self.backbone.get_channels()
         self.fpn = FeaturePyramid(in_channels, num_channel, fpn_layer, conv)
         self.head = HeadNetwork(num_classes, num_anchors, num_channel,
-                                deform=conv=='deform', use_bn=use_bn,
-                                use_residual=use_residual)
+                                use_bn=use_bn, use_residual=use_residual)
 
     def concat(self, logits, preds):
         """ Transpose (N, C, H, W) to (N, H, W, C) and then reshape,

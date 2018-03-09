@@ -9,19 +9,18 @@ Last modified: 2017-09-14 11:55:36
 
 import torch.nn as nn
 
-from ..common import Conv2d, DeformableConv2d
+from ..common import Conv2d
 
 class HeadNetwork(nn.Module):
 
     def __init__(self, num_classes, num_anchors=9, num_channel=256,
-                 dilation=1, deform=False, use_bn=False,
+                 dilation=1, use_bn=False,
                  use_residual=False, init='normal'):
         super(HeadNetwork, self).__init__()
         self.use_residual = use_residual
-        Conv = DeformableConv2d if deform else Conv2d
-        cls_convs = [Conv(num_channel, num_channel, 3, use_bn=use_bn,
+        cls_convs = [Conv2d(num_channel, num_channel, 3, use_bn=use_bn,
                           dilation=dilation, init=init) for i in range(4)]
-        reg_convs = [Conv(num_channel, num_channel, 3, use_bn=use_bn,
+        reg_convs = [Conv2d(num_channel, num_channel, 3, use_bn=use_bn,
                           dilation=dilation, init=init) for i in range(4)]
         self.cls_conv = nn.Sequential(*cls_convs)
         self.reg_conv = nn.Sequential(*reg_convs)

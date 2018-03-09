@@ -10,8 +10,6 @@ import math
 import torch
 import torch.nn as nn
 
-from .deform import ConvOffset2d
-
 
 class Conv2d(nn.Module):
 
@@ -103,55 +101,6 @@ class SeperableConv2d(nn.Module):
     def forward(self, x):
         x = self.depthwise(x)
         x = self.pointwise(x)
-        return x
-
-
-class DeformableConv2d(nn.Module):
-
-    def __init__(self, in_channel, out_channel, kernel_size,
-                 stride=1, use_relu=True, use_bn=False, groups=1, padding=True,
-                 dilation=1, init_std=0.01, init='kaiming', momentum=0.1):
-        super(DeformableConv2d, self).__init__()
-        self.use_relu = use_relu
-        self.use_bn = use_bn
-
-        padding = int((kernel_size - 1) / 2) if padding else 0
-        padding = dilation if dilation > 1 else padding
-        self.conv = nn.Conv2d(in_channel, kernel_size*kernel_size*2*groups,
-                              kernel_size, stride, dilation=dilation,
-                              padding=padding, bias=False)
-        self.offset = ConvOffset2d(
-            in_channel,
-            out_channel,
-            kernel_size,
-            stride,
-            padding=padding,
-            dilation=dilation,
-            num_deformable_groups=groups)
-
-        if self.use_bn:
-            self.bn = nn.BatchNorm2d(out_channel, momentum=momentum)
-        if self.use_relu:
-            self.relu = nn.ReLU(inplace=True)
-
-        # Initialize
-        if init == 'kaiming':
-            torch.nn.init.kaiming_normal(self.conv.weight.data)
-        else:
-            torch.nn.init.normal(self.conv.weight.data, std=init_std)
-        if self.use_bn:
-            torch.nn.init.normal(self.bn.weight.data, 1.0)
-            torch.nn.init.constant(self.bn.bias.data, 0.0)
-
-    def forward(self, x):
-        offsets = self.conv(x)
-
-        x = self.offset(x, offsets)
-        if self.use_bn:
-            x = self.bn(x)
-        if self.use_relu:
-            x = self.relu(x)
-
         return x
 
 
